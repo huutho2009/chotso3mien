@@ -1,0 +1,18 @@
+﻿@if (Session["NickName"] == null)
+{
+    <p>
+        <a href="~/Home/DangKy" rel="nofollow">Đăng ký</a>
+        <span>|</span>
+        <a href="~/Home/DangNhap" rel="nofollow">Đăng nhập</a>
+    </p>
+}
+else
+{
+    <div id="infouser">
+        <p>
+            Thánh chém: <a href="thong-tin-ca-nhan.html">@Session["NickName"].ToString()</a>
+            <span>|</span>
+            <a href="~/Home/DangXuat">Thoát</a>
+        </p>
+    </div>
+}

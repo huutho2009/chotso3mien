@@ -22,6 +22,7 @@ namespace WebSoiSo.Models
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SoiSo")]
 	public partial class CS3MDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,6 +31,12 @@ namespace WebSoiSo.Models
     #region Extensibility Method Definitions
     partial void OnCreated();
     #endregion
+		
+		public CS3MDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SoiSoConnectionString"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public CS3MDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +60,72 @@ namespace WebSoiSo.Models
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_DangKyTaiKhoan")]
+		public ISingleResult<CS_DangKyTaiKhoanResult> CS_DangKyTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nickname", DbType="VarChar(20)")] string nickname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Number", DbType="VarChar(20)")] string number, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(100)")] string email)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nickname, number, password, email);
+			return ((ISingleResult<CS_DangKyTaiKhoanResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_DangNhap")]
+		public ISingleResult<CS_DangNhapResult> CS_DangNhap([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nickname", DbType="VarChar(20)")] string nickname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(50)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nickname, password);
+			return ((ISingleResult<CS_DangNhapResult>)(result.ReturnValue));
+		}
+	}
+	
+	public partial class CS_DangKyTaiKhoanResult
+	{
+		
+		private int _Result;
+		
+		public CS_DangKyTaiKhoanResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="Int NOT NULL")]
+		public int Result
+		{
+			get
+			{
+				return this._Result;
+			}
+			set
+			{
+				if ((this._Result != value))
+				{
+					this._Result = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CS_DangNhapResult
+	{
+		
+		private int _Result;
+		
+		public CS_DangNhapResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="Int NOT NULL")]
+		public int Result
+		{
+			get
+			{
+				return this._Result;
+			}
+			set
+			{
+				if ((this._Result != value))
+				{
+					this._Result = value;
+				}
+			}
 		}
 	}
 }
