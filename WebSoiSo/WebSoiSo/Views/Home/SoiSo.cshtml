@@ -1,0 +1,411 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+
+}
+<div id="breadcrumb">
+    <ol class="breadcrumb" style="margin-bottom: 0px">
+        <li class="active">Miền Bắc</li>
+        <li><a href="soi-cau-mien-trung.html">Miền Trung</a></li>
+        <li><a href="soi-cau-mien-nam.html">Miền Nam</a></li>
+    </ol>
+    <div id="infoheader">
+        <p>
+            <a href="~/Home/DangKy" rel="nofollow">Đăng ký</a>
+            <span>|</span>
+            <a href="~/Home/DangNhap" rel="nofollow">Đăng nhập</a>
+        </p>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+<div id="float_content_right_zone2" class="QCAlign">
+    <div class="zone" style=" font-size: 12pt; margin: 5px;padding: 0px;border-radius: 0px;">
+        <ul>
+            <li style="overflow: hidden;padding-bottom:5px;">
+                <a href="http://giovangchotso9999.net/" rel="nofollow" target="_blank"><img alt="" src="https://giovangchotso.com/public/ads_upload/images/12-12-,281,29.gif.pagespeed.ce.hlG_13pu6C.gif"/></a>
+            </li>            
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <h4 class="text-center">
+            CHỌN SỐ CẦN XEM TỶ LỆ TRÚNG<br><span class="text-danger">(250 xu)</span>
+        </h4>
+        <br>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <select id="province" name="tinh" class="form-control input-sm" onchange="changetinh(this)">
+            <option id="MB" value="mien-bac" selected="">
+                Miền Bắc
+            </option>
+            <option id="kon-tum" value="kon-tum">
+                --Kon Tum
+            </option>
+            <option id="khanh-hoa" value="khanh-hoa">
+                --Khánh Hòa
+            </option>
+            <option id="kien-giang" value="kien-giang">
+                --Kiên Giang
+            </option>
+            <option id="tien-giang" value="tien-giang">
+                --Tiền Giang
+            </option>
+            <option id="da-lat" value="da-lat">
+                --Đà Lạt
+            </option>
+        </select>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12">
+            <table class="table">
+                <caption><i>Bạn cần xem tỷ lệ trúng của số nào thì bạn chọn số đấy để xem. Những số <span class="text-info">màu xanh</span> là số bạn đã xem và không phải mất xu khi xem lại.</i></caption>
+                <tbody id="res_tinh">
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/00" class="btn btn-default">00</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/01" class="btn btn-default">01</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/02" class="btn btn-default">02</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/03" class="btn btn-default">03</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/04" class="btn btn-default">04</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/05" class="btn btn-default">05</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/06" class="btn btn-default">06</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/07" class="btn btn-default">07</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/08" class="btn btn-default">08</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/09" class="btn btn-default">09</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/10" class="btn btn-default">10</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/11" class="btn btn-default">11</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/12" class="btn btn-default">12</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/13" class="btn btn-default">13</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/14" class="btn btn-default">14</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/15" class="btn btn-default">15</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/16" class="btn btn-default">16</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/17" class="btn btn-default">17</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/18" class="btn btn-default">18</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/19" class="btn btn-default">19</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/20" class="btn btn-default">20</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/21" class="btn btn-default">21</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/22" class="btn btn-default">22</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/23" class="btn btn-default">23</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/24" class="btn btn-default">24</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/25" class="btn btn-default">25</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/26" class="btn btn-default">26</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/27" class="btn btn-default">27</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/28" class="btn btn-default">28</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/29" class="btn btn-default">29</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/30" class="btn btn-default">30</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/31" class="btn btn-default">31</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/32" class="btn btn-default">32</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/33" class="btn btn-default">33</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/34" class="btn btn-default">34</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/35" class="btn btn-default">35</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/36" class="btn btn-default">36</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/37" class="btn btn-default">37</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/38" class="btn btn-default">38</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/39" class="btn btn-default">39</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/40" class="btn btn-default">40</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/41" class="btn btn-default">41</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/42" class="btn btn-default">42</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/43" class="btn btn-default">43</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/44" class="btn btn-default">44</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/45" class="btn btn-default">45</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/46" class="btn btn-default">46</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/47" class="btn btn-default">47</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/48" class="btn btn-default">48</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/49" class="btn btn-default">49</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/50" class="btn btn-default">50</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/51" class="btn btn-default">51</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/52" class="btn btn-default">52</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/53" class="btn btn-default">53</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/54" class="btn btn-default">54</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/55" class="btn btn-default">55</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/56" class="btn btn-default">56</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/57" class="btn btn-default">57</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/58" class="btn btn-default">58</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/59" class="btn btn-default">59</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/60" class="btn btn-default">60</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/61" class="btn btn-default">61</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/62" class="btn btn-default">62</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/63" class="btn btn-default">63</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/64" class="btn btn-default">64</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/65" class="btn btn-default">65</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/66" class="btn btn-default">66</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/67" class="btn btn-default">67</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/68" class="btn btn-default">68</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/69" class="btn btn-default">69</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/70" class="btn btn-default">70</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/71" class="btn btn-default">71</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/72" class="btn btn-default">72</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/73" class="btn btn-default">73</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/74" class="btn btn-default">74</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/75" class="btn btn-default">75</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/76" class="btn btn-default">76</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/77" class="btn btn-default">77</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/78" class="btn btn-default">78</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/79" class="btn btn-default">79</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/80" class="btn btn-default">80</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/81" class="btn btn-default">81</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/82" class="btn btn-default">82</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/83" class="btn btn-default">83</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/84" class="btn btn-default">84</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/85" class="btn btn-default">85</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/86" class="btn btn-default">86</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/87" class="btn btn-default">87</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/88" class="btn btn-default">88</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/89" class="btn btn-default">89</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/90" class="btn btn-default">90</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/91" class="btn btn-default">91</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/92" class="btn btn-default">92</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/93" class="btn btn-default">93</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/94" class="btn btn-default">94</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/95" class="btn btn-default">95</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/96" class="btn btn-default">96</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/97" class="btn btn-default">97</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/98" class="btn btn-default">98</a>
+                        </td>
+                        <td>
+                            <a id="btn_tick_0" href="https://giovangchotso.com/trutien/pay_soket/mien-bac/99" class="btn btn-default">99</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
