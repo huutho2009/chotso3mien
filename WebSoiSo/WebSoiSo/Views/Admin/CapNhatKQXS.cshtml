@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "Cập nhật kết quả xổ số";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@using WebSoiSo.Models;
+<!-- form start -->
+@using (Html.BeginForm("CapNhatKQXS", "Admin", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    var lst = (List<CS_GetChiTietKQXSResult>)ViewBag.List;
+    <div class="box-body">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Giải ĐB</label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiDB" name="GiaiDB" placeholder="Giải ĐB" value='@lst[0].So??""'>
+            </div>
+            @*<div>
+                    <span id="spnGiaiDB">
+
+                    </span>
+                </div>*@
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Giải nhất</label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNhat" name="GiaiNhat" placeholder="Giải nhất" value="@lst[1].So">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Giải nhì</label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNhi1" name="GiaiNhi" placeholder="Giải nhì" value="@ViewBag.GiaiNhi1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNhi2" name="GiaiNhi" placeholder="Giải nhì" value="@ViewBag.GiaiNhi2">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Giải ba</label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBa1" name="GiaiBa" placeholder="Giải ba" value="@ViewBag.GiaiBa1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBa2" name="GiaiBa" placeholder="Giải ba" value="@ViewBag.GiaiBa2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBa3" name="GiaBa" placeholder="Giải ba" value="@ViewBag.GiaiBa3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBa4" name="GiaiBa" placeholder="Giải ba" value="@ViewBag.GiaiBa4">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBa5" name="GiaiBa" placeholder="Giải ba" value="@ViewBag.GiaiBa5">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBa6" name="GiaiBa" placeholder="Giải ba" value="@ViewBag.GiaiBa6">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Giải tư</label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiTu1" name="GiaiTu" placeholder="Giải tư" value="@ViewBag.GiaiTu1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiTu2" name="GiaiTu" placeholder="Giải tư" value="@ViewBag.GiaiTu2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiTu3" name="GiaiTu" placeholder="Giải tư" value="@ViewBag.GiaiTu3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiTu4" name="GiaiTu" placeholder="Giải tư" value="@ViewBag.GiaiTu4">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Giải năm</label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNam1" name="GiaiNam" placeholder="Giải năm" value="@ViewBag.GiaiNam">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNam2" name="GiaiNam" placeholder="Giải năm" value="@ViewBag.GiaiNam2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNam3" name="GiaiNam" placeholder="Giải năm" value="@ViewBag.GiaiNam3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNam4" name="GiaiNam" placeholder="Giải năm" value="@ViewBag.GiaiNam4">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNam5" name="GiaiNam" placeholder="Giải năm" value="@ViewBag.GiaiNam5">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiNam6" name="GiaiNam" placeholder="Giải năm" value="@ViewBag.GiaiNam6">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Giải sáu</label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiSau1" name="GiaiSau" placeholder="Giải sáu" value="@ViewBag.GiaiSau1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiSau2" name="GiaiSau" placeholder="Giải sáu" value="@ViewBag.GiaiSau2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiSau3" name="GiaiSau" placeholder="Giải sáu" value="@ViewBag.GiaiSau3">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Giải bảy</label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBay1" name="GiaiBay" placeholder="Giải bảy" value="@ViewBag.GiaiBay1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBay2" name="GiaiBay" placeholder="Giải bảy" value="@ViewBag.GiaiBay2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBay3" name="GiaiBay" placeholder="Giải bảy" value="@ViewBag.GiaiBay3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <input type="number" min="0" class="form-control" id="txtGiaiBay4" name="GiaiBay" placeholder="Giải bảy" value="@ViewBag.GiaiBay4">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <button type="submit" name="submit" value="cancel" class="btn btn-lg btn-default">Hủy</button>
+                <button type="submit" name="submit" value="save" class="btn btn-lg btn-success pull-right">Lưu</button>
+            </div>
+        </div>
+        <!-- /.box-footer -->
+    </div>
+        <!-- /.box-body -->
+    <!-- /.box -->
+}
