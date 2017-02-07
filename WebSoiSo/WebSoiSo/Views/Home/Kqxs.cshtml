@@ -1,4 +1,6 @@
-﻿@{
+﻿@using WebSoiSo.Models
+@model List<CS_GetKQXSResult>
+@{
     ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/_LayoutContent.cshtml";
 
@@ -53,58 +55,58 @@
                     <tbody>
                         <tr>
                             <td class="leftcol">ĐB</td>
-                            <td colspan="12" class="kq_0 dac_biet">09649</td>
+                            <td colspan="12" class="kq_0 dac_biet">@Model[0].So</td>
                         </tr>
                         <tr>
                             <td class="leftcol">G1</td>
-                            <td colspan="12" class="kq_1">669<h8>4</h8><h8>8</h8></td>
+                            <td colspan="12" class="kq_1">@Model[1].So</td>
                         </tr>
                         <tr>
                             <td class="leftcol">G2</td>
-                            <td colspan="6" class="kq_2">00882</td>
-                            <td colspan="6" class="kq_3">78207</td>
+                            <td colspan="6" class="kq_2">@Model[2].So</td>
+                            <td colspan="6" class="kq_3">@Model[3].So</td>
                         </tr>
                         <tr>
                             <td rowspan="2" class="leftcol">G3</td>
-                            <td colspan="4" class="kq_4">82301</td>
-                            <td colspan="4" class="kq_5">49691</td>
-                            <td colspan="4" class="kq_6">85602</td>
+                            <td colspan="4" class="kq_4">@Model[4].So</td>
+                            <td colspan="4" class="kq_5">@Model[5].So</td>
+                            <td colspan="4" class="kq_6">@Model[6].So</td>
                         </tr>
                         <tr>
-                            <td colspan="4" class="kq_7">75883</td>
-                            <td colspan="4" class="kq_8">38<h7>3</h7>2<h7>3</h7></td>
-                            <td colspan="4" class="kq_9">60596</td>
+                            <td colspan="4" class="kq_7">@Model[7].So</td>
+                            <td colspan="4" class="kq_8">@Model[8].So</td>
+                            <td colspan="4" class="kq_9">@Model[9].So</td>
                         </tr>
                         <tr>
                             <td class="leftcol">G4</td>
-                            <td colspan="3" class="kq_10">6249</td>
-                            <td colspan="3" class="kq_11">9666</td>
-                            <td colspan="3" class="kq_12">9525</td>
-                            <td colspan="3" class="kq_13">6370</td>
+                            <td colspan="3" class="kq_10">@Model[10].So</td>
+                            <td colspan="3" class="kq_11">@Model[11].So</td>
+                            <td colspan="3" class="kq_12">@Model[12].So</td>
+                            <td colspan="3" class="kq_13">@Model[13].So</td>
                         </tr>
                         <tr>
                             <td rowspan="2" class="leftcol">G5</td>
-                            <td colspan="4" class="kq_14">4972</td>
-                            <td colspan="4" class="kq_15">3121</td>
-                            <td colspan="4" class="kq_16">1704</td>
+                            <td colspan="4" class="kq_14">@Model[14].So</td>
+                            <td colspan="4" class="kq_15">@Model[16].So</td>
+                            <td colspan="4" class="kq_16">@Model[17].So</td>
                         </tr>
                         <tr>
-                            <td colspan="4" class="kq_17">3614</td>
-                            <td colspan="4" class="kq_18">8019</td>
-                            <td colspan="4" class="kq_19">52<h1>5</h1>0</td>
+                            <td colspan="4" class="kq_17">@Model[18].So</td>
+                            <td colspan="4" class="kq_18">@Model[19].So</td>
+                            <td colspan="4" class="kq_19">@Model[20].So</td>
                         </tr>
                         <tr>
                             <td class="leftcol">G6</td>
-                            <td colspan="4" class="kq_20">707</td>
-                            <td colspan="4" class="kq_21">132</td>
-                            <td colspan="4" class="kq_22">142</td>
+                            <td colspan="4" class="kq_20">@Model[20].So</td>
+                            <td colspan="4" class="kq_21">@Model[21].So</td>
+                            <td colspan="4" class="kq_22">@Model[22].So</td>
                         </tr>
                         <tr>
                             <td class="leftcol">G7</td>
-                            <td colspan="3" class="kq_23">16</td>
-                            <td colspan="3" class="kq_24">67</td>
-                            <td colspan="3" class="kq_25">61</td>
-                            <td colspan="3" class="kq_26">85</td>
+                            <td colspan="3" class="kq_23">@Model[23].So</td>
+                            <td colspan="3" class="kq_24">@Model[24].So</td>
+                            <td colspan="3" class="kq_25">@Model[25].So</td>
+                            <td colspan="3" class="kq_26">@Model[26].So</td>
                         </tr>
                     </tbody>
                 </table>

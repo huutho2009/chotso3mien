@@ -75,6 +75,13 @@ namespace WebSoiSo.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nickname, password);
 			return ((ISingleResult<CS_DangNhapResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_GetKQXS")]
+		public ISingleResult<CS_GetKQXSResult> CS_GetKQXS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Area", DbType="VarChar(20)")] string area, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayXo", DbType="DateTime")] System.Nullable<System.DateTime> ngayXo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), area, ngayXo);
+			return ((ISingleResult<CS_GetKQXSResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class CS_DangKyTaiKhoanResult
@@ -124,6 +131,104 @@ namespace WebSoiSo.Models
 				if ((this._Result != value))
 				{
 					this._Result = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CS_GetKQXSResult
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<System.DateTime> _NgayXo;
+		
+		private string _TenGiai;
+		
+		private string _So;
+		
+		private string _VitriDoXanh;
+		
+		public CS_GetKQXSResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayXo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayXo
+		{
+			get
+			{
+				return this._NgayXo;
+			}
+			set
+			{
+				if ((this._NgayXo != value))
+				{
+					this._NgayXo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenGiai", DbType="VarChar(10)")]
+		public string TenGiai
+		{
+			get
+			{
+				return this._TenGiai;
+			}
+			set
+			{
+				if ((this._TenGiai != value))
+				{
+					this._TenGiai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_So", DbType="VarChar(10)")]
+		public string So
+		{
+			get
+			{
+				return this._So;
+			}
+			set
+			{
+				if ((this._So != value))
+				{
+					this._So = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VitriDoXanh", DbType="VarChar(10)")]
+		public string VitriDoXanh
+		{
+			get
+			{
+				return this._VitriDoXanh;
+			}
+			set
+			{
+				if ((this._VitriDoXanh != value))
+				{
+					this._VitriDoXanh = value;
 				}
 			}
 		}

@@ -22,7 +22,7 @@ namespace WebSoiSo.Controllers
         }
         public ActionResult Kqxs()
         {
-            return View();
+            return View(db.CS_GetKQXS("MB",DateTime.Parse("2017-02-07 00:00")).ToList());
         }
         public ActionResult SoiSo()
         {
