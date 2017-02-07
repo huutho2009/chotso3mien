@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoiSo" Class="CS3MDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=HaiDT-PC;Initial Catalog=SoiSo;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SoiSoConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=SoiSo;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SoiSoConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CS_Area" Member="CS_Areas">
     <Type Name="CS_Area">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -69,6 +69,35 @@
       <Column Name="So" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="TenGiai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="VitriDoXanh" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CS_GetDauDuoi" Method="CS_GetDauDuoi">
+    <Parameter Name="Area" Parameter="area" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="NgayXo" Parameter="ngayXo" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="CS_GetDauDuoiResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdKQXS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dau0" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau1" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau2" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau3" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau4" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau5" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau6" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau7" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau8" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Dau9" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi0" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi1" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi2" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi3" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi4" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi5" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi6" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi7" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi8" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Duoi9" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="LoDo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

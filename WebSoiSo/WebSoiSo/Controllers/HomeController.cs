@@ -22,6 +22,7 @@ namespace WebSoiSo.Controllers
         }
         public ActionResult Kqxs()
         {
+            ViewBag.DauDuoi=db.CS_GetDauDuoi("MB",DateTime.Parse("2017-02-07 00:00")).FirstOrDefault();
             return View(db.CS_GetKQXS("MB",DateTime.Parse("2017-02-07 00:00")).ToList());
         }
         public ActionResult SoiSo()

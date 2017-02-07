@@ -4,6 +4,8 @@
     ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/_LayoutContent.cshtml";
 
+    CS_GetDauDuoiResult dauduoi = (CS_GetDauDuoiResult)ViewBag.DauDuoi;
+
 }
 <div id="breadcrumb">
     <ol class="breadcrumb" style="margin-bottom: 0px">
@@ -119,16 +121,16 @@
                                 <th><h2>Đầu</h2></th>
                                 <th><h2>Lô tô</h2></th>
                             </tr>
-                            <tr><td class="leftcol">0</td><td class="dau_0">04 09</td></tr>
-                            <tr><td class="leftcol">1</td><td class="dau_1">10 12 14 18</td></tr>
-                            <tr><td class="leftcol">2</td><td class="dau_2">20 23 28 <span class="dac_biet">29</span></td></tr>
-                            <tr><td class="leftcol">3</td><td class="dau_3">32 32 34 36</td></tr>
-                            <tr><td class="leftcol">4</td><td class="dau_4">45</td></tr>
-                            <tr><td class="leftcol">5</td><td class="dau_5">56 58</td></tr>
-                            <tr><td class="leftcol">6</td><td class="dau_6">60 62 64 65</td></tr>
-                            <tr><td class="leftcol">7</td><td class="dau_7">70 71 78</td></tr>
-                            <tr><td class="leftcol">8</td><td class="dau_8"></td></tr>
-                            <tr><td class="leftcol">9</td><td class="dau_9">91 92 93</td></tr>
+                            <tr><td class="leftcol">0</td><td class="dau_0">@Html.Raw(dauduoi.Dau0.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">1</td><td class="dau_1">@Html.Raw(@dauduoi.Dau1.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">2</td><td class="dau_2">@Html.Raw(@dauduoi.Dau2.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">3</td><td class="dau_3">@Html.Raw(@dauduoi.Dau3.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">4</td><td class="dau_4">@Html.Raw(@dauduoi.Dau4.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">5</td><td class="dau_5">@Html.Raw(@dauduoi.Dau5.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">6</td><td class="dau_6">@Html.Raw(@dauduoi.Dau6.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">7</td><td class="dau_7">@Html.Raw(@dauduoi.Dau7.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">8</td><td class="dau_8">@Html.Raw(@dauduoi.Dau8.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">9</td><td class="dau_9">@Html.Raw(@dauduoi.Dau9.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -141,16 +143,16 @@
                                 <th><h2>Đuôi</h2></th>
                                 <th><h2>Lô tô</h2></th>
                             </tr>
-                            <tr><td class="leftcol">0</td><td class="dau_0">10 20 60 70</td></tr>
-                            <tr><td class="leftcol">1</td><td class="dau_1">71 91</td></tr>
-                            <tr><td class="leftcol">2</td><td class="dau_2">12 32 32 62 92</td></tr>
-                            <tr><td class="leftcol">3</td><td class="dau_3">23 93</td></tr>
-                            <tr><td class="leftcol">4</td><td class="dau_4">04 14 34 64</td></tr>
-                            <tr><td class="leftcol">5</td><td class="dau_5">45 65</td></tr>
-                            <tr><td class="leftcol">6</td><td class="dau_6">36 56</td></tr>
-                            <tr><td class="leftcol">7</td><td class="dau_7"></td></tr>
-                            <tr><td class="leftcol">8</td><td class="dau_8">18 28 58 78</td></tr>
-                            <tr><td class="leftcol">9</td><td class="dau_9">09 <span class="dac_biet">29</span></td></tr>
+                            <tr><td class="leftcol">0</td><td class="dau_0">@Html.Raw(@dauduoi.Duoi0.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">1</td><td class="dau_1">@Html.Raw(@dauduoi.Duoi1.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">3</td><td class="dau_3">@Html.Raw(@dauduoi.Duoi3.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">2</td><td class="dau_2">@Html.Raw(@dauduoi.Duoi2.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">4</td><td class="dau_4">@Html.Raw(@dauduoi.Duoi4.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">5</td><td class="dau_5">@Html.Raw(@dauduoi.Duoi5.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">6</td><td class="dau_6">@Html.Raw(@dauduoi.Duoi6.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">7</td><td class="dau_7">@Html.Raw(@dauduoi.Duoi7.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">8</td><td class="dau_8">@Html.Raw(@dauduoi.Duoi8.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">9</td><td class="dau_9">@Html.Raw(@dauduoi.Duoi9.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
                         </tbody>
                     </table>
                 </div>

@@ -1,4 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CS3M">
   <DataContextMoniker Name="/CS3MDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b40ef472-bf0b-4806-a6f4-41312c8d1484" absoluteBounds="0.5, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CS3MDataContext/CS_Area" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7afdd91c-856c-49d6-9a37-48aa99fb601c" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5bdd2e28-c95d-4947-9b71-6d8a153dbbd1" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CS3MDataContext/CS_KQX" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c7f00f2-e005-40b8-a73f-4f66aae74866" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9a2335a-bfb6-4059-bf6a-4f79ce5eda79" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CS3MDataContext/CS_KQXS_ChiTiet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbd7e916-1514-4dad-ad6f-8fba860b2b04" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
 </ordesignerObjectsDiagram>
