@@ -20,7 +20,7 @@ namespace WebSoiSo.Controllers
         }
         public ActionResult Kqxs()
         {
-            ViewBag.ListKQXS = dbml.CS_GetKQXS().ToList();
+            ViewBag.ListKQXS = dbml.CS_AdminGetKQXS().ToList();
             return View();
         }
         public ActionResult TaoKQXS()
@@ -75,7 +75,7 @@ namespace WebSoiSo.Controllers
 
             if (name == "capnhat")
             {
-                List<CS_GetChiTietKQXSResult> cs = dbml.CS_GetChiTietKQXS(_id).ToList();
+                List<CS_AdminGetChiTietKQXSResult> cs = dbml.CS_AdminGetChiTietKQXS(_id).ToList();
                 ViewBag.list = cs;
             }
             return View();

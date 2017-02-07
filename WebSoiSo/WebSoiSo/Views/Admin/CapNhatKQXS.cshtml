@@ -6,7 +6,7 @@
 <!-- form start -->
 @using (Html.BeginForm("CapNhatKQXS", "Admin", FormMethod.Post, new { @class = "form-horizontal" }))
 {
-    var lst = (List<CS_GetChiTietKQXSResult>)ViewBag.List;
+    var lst = (List<CS_AdminGetChiTietKQXSResult>)ViewBag.List;
     <div class="box-body">
         <div class="form-group">
             <label class="col-sm-2 control-label">Giải ĐB</label>
