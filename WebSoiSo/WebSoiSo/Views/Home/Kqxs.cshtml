@@ -3,9 +3,7 @@
 @{
     ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/_LayoutContent.cshtml";
-
     CS_GetDauDuoiResult dauduoi = (CS_GetDauDuoiResult)ViewBag.DauDuoi;
-
 }
 <div id="breadcrumb">
     <ol class="breadcrumb" style="margin-bottom: 0px">
@@ -143,10 +141,10 @@
                                 <th><h2>Đuôi</h2></th>
                                 <th><h2>Lô tô</h2></th>
                             </tr>
-                            <tr><td class="leftcol">0</td><td class="dau_0">@Html.Raw(@dauduoi.Duoi0.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">0</td><td class="dau_0">@Html.Raw(dauduoi.Duoi0.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
                             <tr><td class="leftcol">1</td><td class="dau_1">@Html.Raw(@dauduoi.Duoi1.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
-                            <tr><td class="leftcol">3</td><td class="dau_3">@Html.Raw(@dauduoi.Duoi3.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
                             <tr><td class="leftcol">2</td><td class="dau_2">@Html.Raw(@dauduoi.Duoi2.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
+                            <tr><td class="leftcol">3</td><td class="dau_3">@Html.Raw(@dauduoi.Duoi3.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
                             <tr><td class="leftcol">4</td><td class="dau_4">@Html.Raw(@dauduoi.Duoi4.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
                             <tr><td class="leftcol">5</td><td class="dau_5">@Html.Raw(@dauduoi.Duoi5.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
                             <tr><td class="leftcol">6</td><td class="dau_6">@Html.Raw(@dauduoi.Duoi6.Replace(dauduoi.LoDo, "<span style='color:red'>" + dauduoi.LoDo + "</span>"))</td></tr>
