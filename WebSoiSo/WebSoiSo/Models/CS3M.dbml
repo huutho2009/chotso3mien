@@ -1,29 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoiSo" Class="CS3MDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=HaiDT-PC;Initial Catalog=SoiSo;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SoiSoConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CS_Area" Member="CS_Areas">
-    <Type Name="CS_Area">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Area" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CS_KQXS" Member="CS_KQXes">
-    <Type Name="CS_KQX">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdArea" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayXo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="UserCreated" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CS_KQXS_ChiTiet" Member="CS_KQXS_ChiTiets">
-    <Type Name="CS_KQXS_ChiTiet">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdKQXS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TenGiai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="So" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="VitriDoXanh" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Function Name="dbo.CS_DangKyTaiKhoan" Method="CS_DangKyTaiKhoan">
     <Parameter Name="Nickname" Parameter="nickname" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Number" Parameter="number" Type="System.String" DbType="VarChar(20)" />
@@ -69,6 +45,30 @@
       <Column Name="So" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="TenGiai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="VitriDoXanh" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CS_AdminInsertKQXS" Method="CS_AdminInsertKQXS">
+    <Parameter Name="IdArea" Parameter="idArea" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayXo" Parameter="ngayXo" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateCreate" Parameter="dateCreate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UserCreate" Parameter="userCreate" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="CS_AdminInsertKQXSResult">
+      <Column Name="Result" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CS_AdminGetAllArea" Method="CS_AdminGetAllArea">
+    <ElementType Name="CS_AdminGetAllAreaResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Area" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CS_AdminInsertChiTietKQXS" Method="CS_AdminInsertChiTietKQXS">
+    <Parameter Name="IdKQXS" Parameter="idKQXS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TenGiai" Parameter="tenGiai" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="So" Parameter="so" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ViTriDoXanh" Parameter="viTriDoXanh" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="CS_AdminInsertChiTietKQXSResult">
+      <Column Name="Result" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

@@ -1,10 +1,11 @@
 ﻿$(function () {
     $('#btnSave').click(function () {
         var NgayTao = $('#dtpNgayTao').val();
+        var NgayXo = $('#dtpNgayXo').val();
         var strErr;
-        if(NgayXo == null)
+        if(NgayXo == '')
             strErr = '<p style="color:red">Hãy chọn ngày xổ</p>';
-        if(NgayTao == null)
+        if(NgayTao == '')
             strErr += '<p style="color:red">Hãy chọn ngày tạo</p>';
         if (strErr == '') {
             $('#frmCreate').submit();
