@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "TimThanhVien";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+}
+
+<div class="middledite">
+    <div id="breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 0px">
+            <li class="active">Cá Nhân</li>
+            <li><a href="~/Home/DoiMatKhau">Đổi Mật Khẩu</a></li>
+            <li><a href="~/Home/TimThanhVien">Tìm T.Viên</a></li>
+            <li><a style="color: rgba(255, 0, 0, 0.62);font-weight: bold;" href="~/Home/TinNhiem">BXH Tín nhiệm</a></li>
+        </ol>
+        <div id="infoheader">
+            @Html.Partial("_PartialDK_DN")
+        </div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="UserInfoBlock" class="board" style="text-align:center"> <div id="Title"> <p class="text_dangky"> <a>TÌM KIẾM THÀNH VIÊN</a> </p> </div> </div>
+    <div class="row">
+        <form accept-charset="utf-8" method="get">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search"></span> Tìm
+                        </button>
+                    </span>	<input type="text" name="keyword" class="form-control" value="" placeholder="Tìm bằng nickname">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+        </div>
+        <div class="col-sm-12cus">
+            <table class="table table-striped ">
+                <caption>
+                    <em>Danh sách thành viên sẽ được hiển thị. Sử dụng chức năng sắp xếp để có kết quả theo ý muốn. Sử dụng <b>"Tiện ích"</b> để trải nghiệm thêm các chức năng khác.</em>
+                </caption>
+                <tbody>
+                    <tr>
+                        <th id="thFollow-align">NickName</th>
+                        <th id="thFollow-align">
+                            <div class="dropdown">
+                                Thông tin &nbsp;
+                                <button class="btn btn-default dropdown-toggle btn-padding" type="button" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#">Xếp theo Tín nhiệm</a></li>
+                                    <li><a href="#">Xếp theo Bị thích</a></li>
+                                    <li><a href="#">Xếp theo Theo dõi</a></li>
+                                </ul>
+                            </div>
+                        </th>
+                        <th id="thFollow-align"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-primary"></p>
+        </div>
+    </div>
+</div>

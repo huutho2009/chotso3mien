@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+
+}
+<div class="middledite">
+    <div id="breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 0px">
+            <li class="active">Cá Nhân</li>
+            <li><a href="~/Home/DoiMatKhau">Đổi Mật Khẩu</a></li>
+            <li><a href="~/Home/TimThanhVien">Tìm T.Viên</a></li>
+            <li><a style="color: rgba(255, 0, 0, 0.62);font-weight: bold;" href="~/Home/TinNhiem">BXH Tín nhiệm</a></li>
+        </ol> 
+        <div id="infoheader">
+            @Html.Partial("_PartialDK_DN")
+        </div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="UserInfoBlock" class="board" style="text-align:center">
+        <div id="Title">
+            <p class="text_dangky"> <a>CÁC BÀI BÌNH LUẬN</a> </p>
+            (<strong>@Session["NickName"].ToString()</strong>)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12cus">
+            <table class="table table-striped ">
+                <caption><em>Danh sách các bài bình luận của thành viên <strong>huutho2009</strong> đã post lên diễn đàn. Nhấp vào <b>"Chi tiết"</b> để xem các phần trả lời.</em></caption>
+                <tbody></tbody>
+            </table>
+            <p class="text-primary"></p>
+        </div>
+    </div>
+</div>

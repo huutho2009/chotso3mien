@@ -61,4 +61,32 @@
             return false;
         }
     })
+    $('#btnDoiMatKhau').click(function () {
+        var old_password = $('#old_password').val();
+        var new_password = $('#new_password').val();
+        var conf_new_password = $('#conf_new_password').val();
+
+        var strError = '';
+
+        if (old_password == '') {
+            strError += '<p style="color:red">Hãy nhập Mật khẩu cũ</p>';
+        }
+        if (new_password == '') {
+            strError += '<p style="color:red">Hãy nhập Mật khẩu mới</p>';
+        }
+        if (conf_new_password == '') {
+            strError += '<p style="color:red">Hãy nhập Nhập lại mật khẩu</p>';
+        }
+        if (conf_new_password != '' && old_password != '' && new_password != '' && new_password != conf_new_password) {
+            strError += '<p style="color:red">Xác nhận mật khẩu không chính xác</p>';
+        }
+        if (strError == '') {
+            $('#frmDoiMatKhau').submit();
+        }
+        else {
+            $('#lstError').html(strError);
+            $('body,html').animate({ scrollTop: 0 }, 600);
+            return false;
+        }
+    })
 });

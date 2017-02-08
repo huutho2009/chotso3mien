@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+
+}
+<div class="middledite">
+    <div id="breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 0px">
+            <li class="active">Cá Nhân</li>
+            <li><a href="~/Home/DoiMatKhau">Đổi Mật Khẩu</a></li>
+            <li><a href="~/Home/TimThanhVien">Tìm T.Viên</a></li>
+            <li><a style="color: rgba(255, 0, 0, 0.62);font-weight: bold;" href="~/Home/TinNhiem">BXH Tín nhiệm</a></li>
+        </ol>
+        <div id="infoheader">
+            @Html.Partial("_PartialDK_DN")
+        </div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="UserInfoBlock" class="board" style="text-align:center">
+        <div id="Title">
+            <p class="text_dangky">
+                <a>LỊCH SỬ CÁC LẦN CHỐT SỐ</a>
+            </p>
+            <p><strong>huutho2009</strong></p>
+        </div>
+    </div>
+    <div class="pull-right">
+        <a href="~/Home/CaNhan" class="btn btn-sm2 btn-info">Quay lại</a>
+    </div>
+    <div class="clear"></div>
+    <div id="UserInfoBlock" class="board" style="padding: 5px;">
+        <article class="panel panel-success">
+            <div class="panel-heading">
+                <h2 class="panel-title">Chốt số mở thưởng ngày 08/02/2017</h2>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" style="height: 55px;">
+                    <strong>Miền Bắc:</strong>
+                    <span class="badge numarena">53</span>
+                </li>
+            </ul>
+            <li class="list-group-item">
+                <table class="tbllschot">
+                    <tbody>
+                        <tr>
+                            <td><strong>Dự đoán:</strong></td>
+                            <td>1 số</td>
+                        </tr>
+                        <tr></tr>
+                    </tbody>
+                </table>
+            </li>
+        </article>
+        <div class="">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+
+}
+<div class="middledite">
+    <div id="breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 0px">
+            <li class="active">Cá Nhân</li>
+            <li><a href="~/Home/DoiMatKhau">Đổi Mật Khẩu</a></li>
+            <li><a href="~/Home/TimThanhVien">Tìm T.Viên</a></li>
+            <li><a style="color: rgba(255, 0, 0, 0.62);font-weight: bold;" href="~/Home/TinNhiem">BXH Tín nhiệm</a></li>
+        </ol>
+        <div id="infoheader">
+            @Html.Partial("_PartialDK_DN")
+        </div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="UserInfoBlock" class="board" style="text-align:center">
+        <div id="Title">
+            <p class="text_dangky"> <a>DANH SÁCH THEO DÕI</a> </p>
+        </div>
+    </div>
+    <form accept-charset="utf-8" method="GET">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search"></span> Tìm
+                        </button>
+                    </span>
+                    <input type="text" class="form-control" name="search" value="" placeholder="Tìm theo nickname">
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-12">
+        </div>
+        <div class="col-sm-12cus">
+            <table class="table table-striped ">
+                <caption><em>Danh sách những thành viên mà bạn đang theo dõi. Sử dụng <b>"Tiện ích"</b> để trải nghiệm thêm các tính năng khác.</em></caption>
+                <tbody>
+                    <tr>
+                        <th id="thFollow-align">NickName</th>
+                        <th id="thFollow-align">Thông tin</th>
+                        <th id="thFollow-align"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-primary"></p>
+        </div>
+    </div>
+</div>

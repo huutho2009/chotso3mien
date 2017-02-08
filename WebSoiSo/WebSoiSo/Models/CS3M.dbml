@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoiSo" Class="CS3MDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=SoiSo;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SoiSoConnectionString1" Provider="System.Data.SqlClient" />
-   <Function Name="dbo.CS_DangKyTaiKhoan" Method="CS_DangKyTaiKhoan">
+  <Function Name="dbo.CS_DangKyTaiKhoan" Method="CS_DangKyTaiKhoan">
     <Parameter Name="Nickname" Parameter="nickname" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Number" Parameter="number" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
@@ -25,6 +25,7 @@
       <Column Name="TenGiai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="So" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="VitriDoXanh" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="VitriXanh" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.CS_AdminGetKQXS" Method="CS_AdminGetKQXS">
@@ -45,6 +46,30 @@
       <Column Name="So" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="TenGiai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="VitriDoXanh" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CS_AdminInsertKQXS" Method="CS_AdminInsertKQXS">
+    <Parameter Name="IdArea" Parameter="idArea" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayXo" Parameter="ngayXo" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateCreate" Parameter="dateCreate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UserCreate" Parameter="userCreate" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="CS_AdminInsertKQXSResult">
+      <Column Name="Result" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CS_AdminGetAllArea" Method="CS_AdminGetAllArea">
+    <ElementType Name="CS_AdminGetAllAreaResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Area" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CS_AdminInsertChiTietKQXS" Method="CS_AdminInsertChiTietKQXS">
+    <Parameter Name="IdKQXS" Parameter="idKQXS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TenGiai" Parameter="tenGiai" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="So" Parameter="so" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ViTriDoXanh" Parameter="viTriDoXanh" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="CS_AdminInsertChiTietKQXSResult">
+      <Column Name="Result" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.CS_GetDauDuoi" Method="CS_GetDauDuoi">
@@ -74,6 +99,14 @@
       <Column Name="Duoi8" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
       <Column Name="Duoi9" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
       <Column Name="LoDo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CS_GetSoXuatHien" Method="CS_GetSoXuatHien">
+    <Parameter Name="Area" Parameter="area" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="NgayXo" Parameter="ngayXo" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="CS_GetSoXuatHienResult">
+      <Column Name="SoXuatHien" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SoLan" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+
+}
+<div class="middledite">
+    <div id="breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 0px">
+            <li><a href="~/Home/CaNhan">Cá Nhân</a></li>
+            <li><a href="~/Home/DoiMatKhau">Đổi Mật Khẩu</a></li>
+        </ol>
+        <div id="infoheader">
+            @Html.Partial("_PartialDK_DN")
+        </div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+    </div>
+    <div class="dangky_area">
+        <p class="text_dangky">
+            <a>Đổi mật khẩu</a>
+        </p>
+        <br>
+        <div id="lstError"></div>
+        <form id="frmDoiMatKhau" accept-charset="utf-8" method="POST">
+            <p>Mật khẩu cũ</p>
+            <div class="input_dangky">
+                <input type="password" class="form-control" style="width: 200px" size="30" name="old_password" id="old_password">
+            </div>
+            <br>
+            <p>Mật khẩu mới</p>
+            <div class="input_dangky">
+                <input type="password" class="form-control" style="width: 200px" size="30" name="new_password" id="new_password">
+            </div>
+            <br>
+            <p>Nhập lại mật khẩu mới</p>
+            <div class="input_dangky">
+                <input type="password" class="form-control" style="width: 200px" size="30" name="conf_new_password" id="conf_new_password">
+            </div>
+            <br>
+            <input type="button" class="btn btn-primary active" value="Đổi mật khẩu" id="btnDoiMatKhau">
+        </form>
+        <br><br><br>
+    </div>
+</div>

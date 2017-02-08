@@ -14,7 +14,10 @@ namespace WebSoiSo.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var list=db.CS_GetKQXS("MB", DateTime.Parse("2017-02-07 00:00")).ToList();
+            ViewBag.SoLan = list.Count / 26;
+            ViewBag.ListSo = db.CS_GetSoXuatHien("MB", DateTime.Parse("2017-02-07 00:00")).ToList();
+            return View(list);
         }
         public ActionResult Test()
         {
@@ -97,6 +100,75 @@ namespace WebSoiSo.Controllers
         {
             Session["NickName"] = null;
             return View("Index");
+        }
+        public ActionResult DoiMatKhau()
+        {
+            if (Session["NickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("DangNhap");
+            }
+        }
+        [HttpPost]
+        public ActionResult DoiMatKhau(FormCollection frm)
+        {
+            return RedirectToAction("DoiMatKhau");
+        }
+        public ActionResult CaNhan()
+        {
+            if (Session["NickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("DangNhap");
+            }
+        }
+        public ActionResult TinNhiem()
+        {
+            return View();
+        }
+        public ActionResult TheoDoi()
+        {
+            if (Session["NickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("DangNhap");
+            }
+        }
+        public ActionResult TimThanVien()
+        {
+            return View();
+        }
+
+        public ActionResult LichSuChotSo()
+        {
+            if (Session["NickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("DangNhap");
+            }
+        }
+        public ActionResult Comment()
+        {
+            if (Session["NickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("DangNhap");
+            }
         }
     }
 }

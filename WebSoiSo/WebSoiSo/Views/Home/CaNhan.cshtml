@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+
+}
+<div class="middledite">
+    <div id="breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 0px">
+            <li class="active">Cá Nhân</li>
+            <li><a href="~/Home/DoiMatKhau">Đổi Mật Khẩu</a></li>
+            <li><a href="~/Home/TimThanhVien">Tìm T.Viên</a></li>
+            <li><a style="color: rgba(255, 0, 0, 0.62);font-weight: bold;" href="~/Home/TinNhiem">BXH Tín nhiệm</a></li>            
+        </ol> 
+        <div id="infoheader">
+            @Html.Partial("_PartialDK_DN")
+        </div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+    </div>
+    <div style="padding:5px">
+        @*<div class="row">
+            <span class="text-info">- Bạn không muốn sử dụng chức năng CHỐT SỐ hàng ngày? <a class="text-primary text-uppercase label label-danger" href="https://giovangchotso.com/user_control/thamgiaChot/1">Tắt</a></span>
+        </div>*@
+        <ul class="list-group">
+            <li class="list-group-item" style="background-color: #edf5ea;height: 100%;">
+                <div class="text-center">
+                    <h3 class="text-primary" style="text-decoration: underline;">HÔM NAY BẠN KẾT NHẤT CON GÌ?</h3>
+                    <span>Hãy thể hiện cho cộng đồng biết về khả năng ra số của bạn. Kết quả sẽ được cập nhật sau giờ quay xổ số hàng ngày.</span>
+                </div>
+                <div class="text-center" style="padding-top:10px;">
+                    <ul class="nav nav-pills chotso">
+                        <li class="active"><a data-toggle="pill" href="#menumien-bac" class="pill-sm">Miền Bắc</a></li>
+                        <li class=""><a data-toggle="pill" href="#menuda-nang">Đà Nẵng</a></li>
+                        <li class=""><a data-toggle="pill" href="#menukhanh-hoa">Khánh Hòa</a></li>
+                        <li class=""><a data-toggle="pill" href="#menucan-tho">Cần Thơ</a></li>
+                        <li class=""><a data-toggle="pill" href="#menudong-nai">Đồng Nai</a></li>
+                        <li class=""><a data-toggle="pill" href="#menusoc-trang">Sóc Trăng</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="menumien-bac" class="tab-pane fade active in">
+                            <h3>MIỀN BẮC</h3>
+                            <span style="color: #999;"><em>Các số bạn đã chọn</em></span>
+                            <p>
+                                <span class="badge numarena2">53</span>
+                            </p>
+                        </div>
+                        <div id="menuda-nang" class="tab-pane fade">
+                            <h3>Đà Nẵng</h3>
+                            <span style="color: #999;">
+                                <em>Chọn tối đa 05 số không trùng nhau</em>
+                                <div id="getting-startedda-nang">Thời gian còn lại là: 02:42:02</div>
+                                <script type="text/javascript">$('#getting-startedda-nang').countdown('2017/02/08 17:00:00', function (event) { $(this).html(event.strftime('Thời gian còn lại là: %H:%M:%S')); });</script>
+                                <p><input id="post-da-nang" type="tel" class="form-control mask-num" value=""></p>
+                                <button id="da-nang" type="button" class="btn btn-primary btn-sm btn-sm2 sent-num">CHỐT</button>
+                            </span>
+                        </div>
+                        <div id="menukhanh-hoa" class="tab-pane fade">
+                            <h3>Khánh Hòa</h3>
+                            <span style="color: #999;">
+                                <em>Chọn tối đa 05 số không trùng nhau</em>
+                                <div id="getting-startedkhanh-hoa">Thời gian còn lại là: 02:42:02</div>
+                                <script type="text/javascript">$('#getting-startedkhanh-hoa').countdown('2017/02/08 17:00:00', function (event) { $(this).html(event.strftime('Thời gian còn lại là: %H:%M:%S')); });</script>
+                                <p><input id="post-khanh-hoa" type="tel" class="form-control mask-num" value=""></p>
+                                <button id="khanh-hoa" type="button" class="btn btn-primary btn-sm btn-sm2 sent-num">CHỐT</button>
+                            </span>
+                        </div>
+                        <div id="menucan-tho" class="tab-pane fade">
+                            <h3>Cần Thơ</h3>
+                            <span style="color: #999;">
+                                <em>Chọn tối đa 05 số không trùng nhau</em>
+                                <div id="getting-startedcan-tho">Thời gian còn lại là: 01:42:02</div>
+                                <script type="text/javascript">$('#getting-startedcan-tho').countdown('2017/02/08 16:00:00', function (event) { $(this).html(event.strftime('Thời gian còn lại là: %H:%M:%S')); });</script>
+                                <p><input id="post-can-tho" type="tel" class="form-control mask-num" value=""></p>
+                                <button id="can-tho" type="button" class="btn btn-primary btn-sm btn-sm2 sent-num">CHỐT</button>
+                            </span>
+                        </div>
+                        <div id="menudong-nai" class="tab-pane fade">
+                            <h3>Đồng Nai</h3>
+                            <span style="color: #999;">
+                                <em>Chọn tối đa 05 số không trùng nhau</em>
+                                <div id="getting-starteddong-nai">Thời gian còn lại là: 01:42:02</div>
+                                <script type="text/javascript">$('#getting-starteddong-nai').countdown('2017/02/08 16:00:00', function (event) { $(this).html(event.strftime('Thời gian còn lại là: %H:%M:%S')); });</script>
+                                <p><input id="post-dong-nai" type="tel" class="form-control mask-num" value=""></p>
+                                <button id="dong-nai" type="button" class="btn btn-primary btn-sm btn-sm2 sent-num">CHỐT</button>
+                            </span>
+                        </div>
+                        <div id="menusoc-trang" class="tab-pane fade">
+                            <h3>Sóc Trăng</h3>
+                            <span style="color: #999;">
+                                <em>Chọn tối đa 05 số không trùng nhau</em>
+                                <div id="getting-startedsoc-trang">Thời gian còn lại là: 01:42:02</div>
+                                <script type="text/javascript">$('#getting-startedsoc-trang').countdown('2017/02/08 16:00:00', function (event) { $(this).html(event.strftime('Thời gian còn lại là: %H:%M:%S')); });</script>
+                                <p><input id="post-soc-trang" type="tel" class="form-control mask-num" value=""></p>
+                                <button id="soc-trang" type="button" class="btn btn-primary btn-sm btn-sm2 sent-num">CHỐT</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-left" style="margin-top: 15px; border-top: 1px solid #ddd;">
+                        <ul style="padding-top:5px;">
+                            <li>Bạn đã chốt: <strong>1 lần</strong></li>
+                            <li>Số tỉnh bạn tham gia chốt: <strong>1 tỉnh</strong></li>
+                            <li>Tỷ lệ chuẩn: <strong>0 %</strong></li>
+                            <li>Tỷ lệ trượt: <strong>0 %</strong></li>
+                            <li class="text-center"><a href="~/Home/LichSuChotSo" class="btn btn-info btn-sm">Lịch sử chốt số</a></li>
+                        </ul>
+                        @*<hr>
+                        <span class="">- Bạn không muốn sử dụng chức năng CHỐT SỐ hàng ngày? <a class="text-primary text-uppercase label label-danger" href="https://giovangchotso.com/user_control/thamgiaChot/1">Tắt</a></span>*@
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="UserInfoBlock" class="board" style="text-align:center">
+        <div id="Title">
+            <p class="text_dangky">
+                <a>Thông tin cá nhân</a>
+            </p>
+        </div>
+    </div>
+    <div style="padding: 5px">
+        <form accept-charset="utf-8" method="POST" enctype="multipart/form-data">
+            <ul class="list-group">
+                <li class="list-group-item">Hình đại diện: <img style="margin-left: 20px;" src="public/images/ava_default.png.pagespeed.ce.rjXV6ez3hj.png" class="img-circle" alt="Cinque Terre" width="70" height="70"> </li>
+                <li class="list-group-item">Thay hình đại diện:<input type="file" class="form-control" name="avatar"></li>
+                <li class="list-group-item">Nickname: <b>huutho2009</b></li>
+                <li class="list-group-item">Số xu: <b>10000</b></li>
+                <li class="list-group-item">Số ĐT: <b>0979067500</b></li>
+                <li class="list-group-item">Email: <input type="text" class="form-control" style="width: 200px" size="30" value="huutho2009@gmail.com" name="email" id="email"></li>
+                <li class="list-group-item">Gia nhập: <b>26/12/2016</b></li>
+                <li class="list-group-item">
+                    <input type="submit" class="btn btn-primary active" value="Cập nhật thông tin">                   
+                    <a href="~/Home/Comment" class="btn btn-default">
+                        <span class="glyphicon glyphicon-file"></span> Xem các comment
+                    </a>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div style="padding: 5px">
+        <h3>Hoạt động:</h3>
+        <ul class="list-group">
+            <li class="list-group-item"><span class="badge">0</span>Tín nhiệm</li>
+            <li class="list-group-item"><span class="badge">0</span>Bị thích</li>
+            <li class="list-group-item"><span class="badge">0</span>Theo dõi</li>
+        </ul>
+    </div>
+    <div class="clear"></div>  
+</div>

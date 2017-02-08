@@ -30,15 +30,6 @@ namespace WebSoiSo.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCS_Area(CS_Area instance);
-    partial void UpdateCS_Area(CS_Area instance);
-    partial void DeleteCS_Area(CS_Area instance);
-    partial void InsertCS_KQX(CS_KQX instance);
-    partial void UpdateCS_KQX(CS_KQX instance);
-    partial void DeleteCS_KQX(CS_KQX instance);
-    partial void InsertCS_KQXS_ChiTiet(CS_KQXS_ChiTiet instance);
-    partial void UpdateCS_KQXS_ChiTiet(CS_KQXS_ChiTiet instance);
-    partial void DeleteCS_KQXS_ChiTiet(CS_KQXS_ChiTiet instance);
     #endregion
 		
 		public CS3MDataContext() : 
@@ -69,30 +60,6 @@ namespace WebSoiSo.Models
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<CS_Area> CS_Areas
-		{
-			get
-			{
-				return this.GetTable<CS_Area>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CS_KQX> CS_KQXes
-		{
-			get
-			{
-				return this.GetTable<CS_KQX>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CS_KQXS_ChiTiet> CS_KQXS_ChiTiets
-		{
-			get
-			{
-				return this.GetTable<CS_KQXS_ChiTiet>();
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_DangKyTaiKhoan")]
@@ -130,413 +97,39 @@ namespace WebSoiSo.Models
 			return ((ISingleResult<CS_AdminGetChiTietKQXSResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_AdminInsertKQXS")]
+		public ISingleResult<CS_AdminInsertKQXSResult> CS_AdminInsertKQXS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArea", DbType="Int")] System.Nullable<int> idArea, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayXo", DbType="DateTime")] System.Nullable<System.DateTime> ngayXo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DateCreate", DbType="DateTime")] System.Nullable<System.DateTime> dateCreate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserCreate", DbType="NVarChar(50)")] string userCreate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArea, ngayXo, dateCreate, userCreate);
+			return ((ISingleResult<CS_AdminInsertKQXSResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_AdminGetAllArea")]
+		public ISingleResult<CS_AdminGetAllAreaResult> CS_AdminGetAllArea()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<CS_AdminGetAllAreaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_AdminInsertChiTietKQXS")]
+		public ISingleResult<CS_AdminInsertChiTietKQXSResult> CS_AdminInsertChiTietKQXS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdKQXS", DbType="Int")] System.Nullable<int> idKQXS, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenGiai", DbType="VarChar(10)")] string tenGiai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="So", DbType="VarChar(10)")] string so, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ViTriDoXanh", DbType="VarChar(10)")] string viTriDoXanh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idKQXS, tenGiai, so, viTriDoXanh);
+			return ((ISingleResult<CS_AdminInsertChiTietKQXSResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_GetDauDuoi")]
 		public ISingleResult<CS_GetDauDuoiResult> CS_GetDauDuoi([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Area", DbType="VarChar(20)")] string area, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayXo", DbType="DateTime")] System.Nullable<System.DateTime> ngayXo)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), area, ngayXo);
 			return ((ISingleResult<CS_GetDauDuoiResult>)(result.ReturnValue));
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CS_Area")]
-	public partial class CS_Area : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Area;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnAreaChanging(string value);
-    partial void OnAreaChanged();
-    #endregion
-		
-		public CS_Area()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CS_GetSoXuatHien")]
+		public ISingleResult<CS_GetSoXuatHienResult> CS_GetSoXuatHien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Area", DbType="VarChar(20)")] string area, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayXo", DbType="DateTime")] System.Nullable<System.DateTime> ngayXo)
 		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area", DbType="NVarChar(50)")]
-		public string Area
-		{
-			get
-			{
-				return this._Area;
-			}
-			set
-			{
-				if ((this._Area != value))
-				{
-					this.OnAreaChanging(value);
-					this.SendPropertyChanging();
-					this._Area = value;
-					this.SendPropertyChanged("Area");
-					this.OnAreaChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CS_KQXS")]
-	public partial class CS_KQX : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private System.Nullable<int> _IdArea;
-		
-		private System.Nullable<System.DateTime> _NgayXo;
-		
-		private System.Nullable<System.DateTime> _DateCreated;
-		
-		private string _UserCreated;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnIdAreaChanging(System.Nullable<int> value);
-    partial void OnIdAreaChanged();
-    partial void OnNgayXoChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayXoChanged();
-    partial void OnDateCreatedChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateCreatedChanged();
-    partial void OnUserCreatedChanging(string value);
-    partial void OnUserCreatedChanged();
-    #endregion
-		
-		public CS_KQX()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdArea", DbType="Int")]
-		public System.Nullable<int> IdArea
-		{
-			get
-			{
-				return this._IdArea;
-			}
-			set
-			{
-				if ((this._IdArea != value))
-				{
-					this.OnIdAreaChanging(value);
-					this.SendPropertyChanging();
-					this._IdArea = value;
-					this.SendPropertyChanged("IdArea");
-					this.OnIdAreaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayXo", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayXo
-		{
-			get
-			{
-				return this._NgayXo;
-			}
-			set
-			{
-				if ((this._NgayXo != value))
-				{
-					this.OnNgayXoChanging(value);
-					this.SendPropertyChanging();
-					this._NgayXo = value;
-					this.SendPropertyChanged("NgayXo");
-					this.OnNgayXoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreated", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateCreated
-		{
-			get
-			{
-				return this._DateCreated;
-			}
-			set
-			{
-				if ((this._DateCreated != value))
-				{
-					this.OnDateCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._DateCreated = value;
-					this.SendPropertyChanged("DateCreated");
-					this.OnDateCreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCreated", DbType="NVarChar(50)")]
-		public string UserCreated
-		{
-			get
-			{
-				return this._UserCreated;
-			}
-			set
-			{
-				if ((this._UserCreated != value))
-				{
-					this.OnUserCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._UserCreated = value;
-					this.SendPropertyChanged("UserCreated");
-					this.OnUserCreatedChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CS_KQXS_ChiTiet")]
-	public partial class CS_KQXS_ChiTiet : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private System.Nullable<int> _IdKQXS;
-		
-		private string _TenGiai;
-		
-		private string _So;
-		
-		private string _VitriDoXanh;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnIdKQXSChanging(System.Nullable<int> value);
-    partial void OnIdKQXSChanged();
-    partial void OnTenGiaiChanging(string value);
-    partial void OnTenGiaiChanged();
-    partial void OnSoChanging(string value);
-    partial void OnSoChanged();
-    partial void OnVitriDoXanhChanging(string value);
-    partial void OnVitriDoXanhChanged();
-    #endregion
-		
-		public CS_KQXS_ChiTiet()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdKQXS", DbType="Int")]
-		public System.Nullable<int> IdKQXS
-		{
-			get
-			{
-				return this._IdKQXS;
-			}
-			set
-			{
-				if ((this._IdKQXS != value))
-				{
-					this.OnIdKQXSChanging(value);
-					this.SendPropertyChanging();
-					this._IdKQXS = value;
-					this.SendPropertyChanged("IdKQXS");
-					this.OnIdKQXSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenGiai", DbType="VarChar(10)")]
-		public string TenGiai
-		{
-			get
-			{
-				return this._TenGiai;
-			}
-			set
-			{
-				if ((this._TenGiai != value))
-				{
-					this.OnTenGiaiChanging(value);
-					this.SendPropertyChanging();
-					this._TenGiai = value;
-					this.SendPropertyChanged("TenGiai");
-					this.OnTenGiaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_So", DbType="VarChar(10)")]
-		public string So
-		{
-			get
-			{
-				return this._So;
-			}
-			set
-			{
-				if ((this._So != value))
-				{
-					this.OnSoChanging(value);
-					this.SendPropertyChanging();
-					this._So = value;
-					this.SendPropertyChanged("So");
-					this.OnSoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VitriDoXanh", DbType="VarChar(10)")]
-		public string VitriDoXanh
-		{
-			get
-			{
-				return this._VitriDoXanh;
-			}
-			set
-			{
-				if ((this._VitriDoXanh != value))
-				{
-					this.OnVitriDoXanhChanging(value);
-					this.SendPropertyChanging();
-					this._VitriDoXanh = value;
-					this.SendPropertyChanged("VitriDoXanh");
-					this.OnVitriDoXanhChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), area, ngayXo);
+			return ((ISingleResult<CS_GetSoXuatHienResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -604,6 +197,8 @@ namespace WebSoiSo.Models
 		private string _So;
 		
 		private string _VitriDoXanh;
+		
+		private string _VitriXanh;
 		
 		public CS_GetKQXSResult()
 		{
@@ -685,6 +280,22 @@ namespace WebSoiSo.Models
 				if ((this._VitriDoXanh != value))
 				{
 					this._VitriDoXanh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VitriXanh", DbType="VarChar(10)")]
+		public string VitriXanh
+		{
+			get
+			{
+				return this._VitriXanh;
+			}
+			set
+			{
+				if ((this._VitriXanh != value))
+				{
+					this._VitriXanh = value;
 				}
 			}
 		}
@@ -899,6 +510,102 @@ namespace WebSoiSo.Models
 				if ((this._VitriDoXanh != value))
 				{
 					this._VitriDoXanh = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CS_AdminInsertKQXSResult
+	{
+		
+		private int _Result;
+		
+		public CS_AdminInsertKQXSResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="Int NOT NULL")]
+		public int Result
+		{
+			get
+			{
+				return this._Result;
+			}
+			set
+			{
+				if ((this._Result != value))
+				{
+					this._Result = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CS_AdminGetAllAreaResult
+	{
+		
+		private int _Id;
+		
+		private string _Area;
+		
+		public CS_AdminGetAllAreaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area", DbType="NVarChar(50)")]
+		public string Area
+		{
+			get
+			{
+				return this._Area;
+			}
+			set
+			{
+				if ((this._Area != value))
+				{
+					this._Area = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CS_AdminInsertChiTietKQXSResult
+	{
+		
+		private int _Result;
+		
+		public CS_AdminInsertChiTietKQXSResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="Int NOT NULL")]
+		public int Result
+		{
+			get
+			{
+				return this._Result;
+			}
+			set
+			{
+				if ((this._Result != value))
+				{
+					this._Result = value;
 				}
 			}
 		}
@@ -1321,6 +1028,50 @@ namespace WebSoiSo.Models
 				if ((this._LoDo != value))
 				{
 					this._LoDo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CS_GetSoXuatHienResult
+	{
+		
+		private string _SoXuatHien;
+		
+		private System.Nullable<int> _SoLan;
+		
+		public CS_GetSoXuatHienResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoXuatHien", DbType="VarChar(50)")]
+		public string SoXuatHien
+		{
+			get
+			{
+				return this._SoXuatHien;
+			}
+			set
+			{
+				if ((this._SoXuatHien != value))
+				{
+					this._SoXuatHien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLan", DbType="Int")]
+		public System.Nullable<int> SoLan
+		{
+			get
+			{
+				return this._SoLan;
+			}
+			set
+			{
+				if ((this._SoLan != value))
+				{
+					this._SoLan = value;
 				}
 			}
 		}

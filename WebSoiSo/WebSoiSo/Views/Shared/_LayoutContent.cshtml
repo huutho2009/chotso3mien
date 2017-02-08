@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <meta property="fb:pages" content="313316962132321" />
-    <base href="http://chotso3mien.com" />
+    @*<base href="http://chotso3mien.com" />*@
+    <base href="http://localhost:1499" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="vi" />
     <meta name="language" content="Vietnamese" />
@@ -120,17 +121,17 @@
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="https://giovangchotso.com/thong-ke-xo-so.html" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="~/Home/TinNhiem" class="dropdown-toggle" data-toggle="dropdown">
                             BXH Tín Nhiệm
                         </a>
                     </li>
-                    <li class="dropdown">
+                    @*<li class="dropdown">
                         <a href="https://giovangchotso.com/thong-ke-xo-so.html" class="dropdown-toggle" data-toggle="dropdown">
                             Tin Nhắn
                         </a>
-                    </li>
+                    </li>*@
                     <li class="dropdown">
-                        <a href="https://giovangchotso.com/thong-ke-xo-so.html" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="~/Home/TheoDoi" class="dropdown-toggle" data-toggle="dropdown">
                             Theo Dõi
                         </a>
                     </li>
@@ -140,12 +141,10 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://giovangchotso.com/thong-tin-ca-nhan.html">Thông tin</a></li>
-                            <li><a href="https://giovangchotso.com/danh-sach-den.html">Danh sách nick ẩn</a> </li>
-                            <li><a href="https://giovangchotso.com/doi-mat-khau.html">Đổi mật khẩu</a></li>
-                            <li><a href="https://giovangchotso.com/naptien/napvip">Nạp Xu</a></li>
+                            <li><a href="~/Home/CaNhan">Thông tin</a></li>                            
+                            <li><a href="~/Home/DoiMatKhau">Đổi mật khẩu</a></li>                            
                             <li class="divider"></li>
-                            <li><a href="https://giovangchotso.com/user_control/logout"><i class="iconPower iconBackground"></i>Thoát</a></li>
+                            <li><a href="~/Home/DangXuat"><i class="iconPower iconBackground"></i>Thoát</a></li>
                         </ul>
                     </li>
                 </ul>
