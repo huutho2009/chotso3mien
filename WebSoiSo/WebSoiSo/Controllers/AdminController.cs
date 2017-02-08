@@ -25,7 +25,7 @@ namespace WebSoiSo.Controllers
         }
         public ActionResult TaoKQXS()
         {
-            IEnumerable<SelectListItem> q = dbml.CS_Areas.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Area }).ToList();
+            IEnumerable<SelectListItem> q = dbml.CS_AdminGetAllArea().Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Area }).ToList();
             ViewBag.ListArea = q;
             return View();
         }
@@ -44,22 +44,11 @@ namespace WebSoiSo.Controllers
                     ViewBag.DateCreated = DateCreated;
                     string UserCreated = _model.Get("UserCreated");
                     ViewBag.UserCreated = UserCreated;
-                    CS_KQX kqxs = new CS_KQX();
-                    kqxs.IdArea = Int32.Parse(idArea);
-                    if (NgayXo != "")
-                        kqxs.NgayXo = DateTime.Parse(NgayXo);
+                    var rs = dbml.CS_AdminInsertKQXS(Int32.Parse(idArea), DateTime.Parse(NgayXo), DateTime.Parse(DateCreated), UserCreated).FirstOrDefault().Result;
+                    if (rs == 1)
+                        return RedirectToAction("Kqxs");
                     else
-                        break;
-                    if (DateCreated != "")
-                        kqxs.DateCreated = DateTime.Parse(DateCreated);
-                    else
-                        break;
-                    if (UserCreated != "")
-                        kqxs.UserCreated = UserCreated;
-                    else
-                        break;
-                    dbml.CS_KQXes.InsertOnSubmit(kqxs);
-                    dbml.SubmitChanges();
+                        return RedirectToAction("TaoKQXS");
                     break;
                 case "cancel":
                     //return RedirectToAction("Kqxs");
@@ -98,17 +87,15 @@ namespace WebSoiSo.Controllers
                     dict.Add("G5", _model.Get("GiaiNam").ToString().Split(','));
                     dict.Add("G6", _model.Get("GiaiSau").ToString().Split(','));
                     dict.Add("G7", _model.Get("GiaiBay").ToString().Split(','));
-                    CS_KQXS_ChiTiet cs = null;
                     foreach (var item in dict)
                     {
                         foreach (var item1 in item.Value)
                         {
-                            cs = new CS_KQXS_ChiTiet();
-                            cs.IdKQXS = _id;
-                            cs.TenGiai = item.Key.ToString();
-                            cs.So = item1;
-                            dbml.CS_KQXS_ChiTiets.InsertOnSubmit(cs);
-                            dbml.SubmitChanges();
+                            var rs = dbml.CS_AdminInsertChiTietKQXS(_id, item.Key.ToString(), item1, "").FirstOrDefault().Result;
+                            if (rs == 1)
+                                return RedirectToAction("Kqxs");
+                            else
+                                return RedirectToAction("CapNhatKQXS");
                         }
                     }
                     

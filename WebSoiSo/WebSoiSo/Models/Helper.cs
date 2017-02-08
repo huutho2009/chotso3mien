@@ -7,7 +7,7 @@ namespace WebSoiSo.Models
 {
     public static class Helper
     {
-        string ReplaceSoXo(string _so, string _do, string _xanh)
+        static string ReplaceSoXo(string _so, string _do, string _xanh)
         {
             if (_do!="000000")
             {
